@@ -14,7 +14,7 @@ export const useScrollEventHooks = () => {
           setIsInViewport(true);
         } else {
           // 요소가 뷰포트를 벗어난 경우
-          //   setIsInViewport(false);
+          setIsInViewport(false);
         }
       });
     };

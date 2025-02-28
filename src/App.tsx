@@ -6,6 +6,8 @@ import { ScrollAnimationContainer } from "./components/ScrollAnimationContainer"
 import Video from "./assets/video/video.mp4";
 import AavecCms from "./assets/image/aavecCms.png";
 import DigitalId from "./assets/image/digitalId.png";
+import Eliga from "./assets/image/eliga.png";
+import CursorXY from "./components/CursorXY";
 
 function App() {
   const [isInViewport, setIsInViewport] = useState(false);
@@ -20,7 +22,7 @@ function App() {
           //요소 viewport
           setIsInViewport(true);
         } else {
-          setIsInViewport(false);
+          // setIsInViewport(false);
         }
       });
     };
@@ -64,7 +66,9 @@ function App() {
             유지보수
           </p>
           <p>- 한국 방송통신 대학교 입학</p>
-          <a href="">- SQISoft Frontend 개발자 인터뷰</a>
+          <a href="https://blog.naver.com/sqisoftmedia/222742995352">
+            - SQISoft Frontend 개발자 인터뷰
+          </a>
         </>
       ),
     },
@@ -83,7 +87,9 @@ function App() {
           <p>
             - 옴니원개발팀 : 관리자페이지 2개 초기 셋팅 및 개발 참여 "정" 담당
           </p>
-          <a href="">- RaonSecure Frontend 개발자 인터뷰</a>
+          <a href="https://blog.naver.com/funraon/223506757781">
+            - RaonSecure Frontend 개발자 인터뷰
+          </a>
         </>
       ),
     },
@@ -91,132 +97,153 @@ function App() {
 
   return (
     <ParentsContainer>
-      <ScrollAnimationContainer color={"white"}>
-        <PageArea>
-          <IntroBox>
-            <Title>안녕하세요.</Title>
-            <SubTitle>Frontend 개발자 이서주입니다.</SubTitle>
-            <SubArea>
-              <div></div>
-              <IntroArea src={IntroImage} alt="noImage" />
-            </SubArea>
-          </IntroBox>
-        </PageArea>
-      </ScrollAnimationContainer>
+      <CursorXY />
+      <ScrollAnimationContainer
+        children={
+          <PageArea>
+            <IntroBox>
+              <Title>안녕하세요.</Title>
+              <SubTitle>Frontend 개발자 이서주입니다.</SubTitle>
+              <SubArea>
+                <div></div>
+                <IntroArea src={IntroImage} alt="noImage" />
+              </SubArea>
+            </IntroBox>
+          </PageArea>
+        }
+      />
+      <ScrollAnimationContainer
+        children={
+          <PageArea>
+            <IntroBox>
+              <Title>0️⃣. About Me!</Title>
 
-      <ScrollAnimationContainer color={"white"}>
-        <PageArea>
-          <IntroBox>
-            <Title>0️⃣. About Me!</Title>
+              <MyIntroBox>
+                반갑습니다! 전 현재 Frontend 개발자로 근무하고 있습니다. <br />
+                저는 개발자란 새로운 언어와 트렌드에 경계없이 수용하는 마음을
+                가지고 있어야한다고 생각합니다. <br /> 그리하여 Node.js 스터디
+                및 Three.js, 함수형 프로그래밍을 공부하고 있습니다. <br />
+                또한, 제가 배운 내용들은{" "}
+                <a href={"https://potential-coding.tistory.com"}>
+                  여기에서
+                </a>{" "}
+                공유하고 있습니다. <br />
+                저는 항상 더 나은 개발자가 되기위해 계속 노력하고 있습니다.{" "}
+                <br />
+                감사합니다.
+                <MyHistory>
+                  <div id="yearNavBar">
+                    {yearArray.map((item) => (
+                      <div
+                        id="yearCard"
+                        className={`${
+                          item.key === activeYear ? "active" : ""
+                        } `}
+                        onClick={() => setActiveYear(item.key)}
+                      >
+                        {item.title}
+                      </div>
+                    ))}
+                  </div>
+                  <div id="yearDetail">
+                    {
+                      yearArray.find((item) => item.key === activeYear)
+                        ?.description
+                    }
+                  </div>
+                </MyHistory>
+              </MyIntroBox>
+            </IntroBox>
+          </PageArea>
+        }
+      />
+      <ScrollAnimationContainer
+        children={
+          <PageArea>
+            <IntroBox>
+              <Category>#Project</Category>
+              <Title>1️⃣. Studio AAVEC</Title>
 
-            <MyIntroBox>
-              반갑습니다! 전 현재 Frontend 개발자로 근무하고 있습니다. <br />
-              저는 개발자란 새로운 언어와 트렌드에 경계없이 수용하는 마음을
-              가지고 있어야한다고 생각합니다. <br /> 그리하여 Node.js 스터디 및
-              Three.js, 함수형 프로그래밍을 공부하고 있습니다. <br />
-              또한, 제가 배운 내용들은{" "}
-              <a href={"https://potential-coding.tistory.com"}>여기에서</a>{" "}
-              공유하고 있습니다. <br />
-              저는 항상 더 나은 개발자가 되기위해 계속 노력하고 있습니다. <br />
-              감사합니다.
-              <MyHistory>
-                <div id="yearNavBar">
-                  {yearArray.map((item) => (
-                    <div
-                      id="yearCard"
-                      className={`${item.key === activeYear ? "active" : ""} `}
-                      onClick={() => setActiveYear(item.key)}
-                    >
-                      {item.title}
-                    </div>
-                  ))}
-                </div>
+              <SubArea>
+                <ProjectDetail>
+                  <div>
+                    프로젝트 기간 : 2024.07~2024.08
+                    <a href="https://studioaavec.com/">접속 URL</a>
+                  </div>
+                  <div>담당 업무</div>
+                  <p>- HomePage, 콘텐츠 관리 용 CMS 페이지 개발 </p>
+                  <p>- SquareSpace 도메인 {"->"} AWS에서 관리하도록 이전</p>
+                  <p>- Figma 통해 웹 퍼블리싱 담당</p>
+                  <p>- Node.js 통해 백엔드 서버 개발</p>
+                  <p>- MySQL 사용하여 쿼리 작성 </p>
+                  <p>- EC2에 배포 경험</p>
+                </ProjectDetail>
+                <VideoTag
+                  src={Video}
+                  muted
+                  playsinline
+                  autoplay={true}
+                  controls={true}
+                />
+              </SubArea>
+            </IntroBox>
+          </PageArea>
+        }
+      />
 
-                <div id="yearDetail">
-                  {
-                    yearArray.find((item) => item.key === activeYear)
-                      ?.description
-                  }
-                </div>
-              </MyHistory>
-            </MyIntroBox>
-          </IntroBox>
-        </PageArea>
-      </ScrollAnimationContainer>
-      <ScrollAnimationContainer color={"pink"}>
-        <PageArea>
-          <IntroBox>
-            <Category>#Project</Category>
-            <Title>1️⃣. Studio AAVEC</Title>
+      <ScrollAnimationContainer
+        children={
+          <PageArea>
+            <IntroBox>
+              <Category>#Project</Category>
+              <Title>2️⃣. Eliga Order </Title>
 
-            <SubArea>
-              <ProjectDetail>
-                <div>프로젝트 기간 : 2024.07~2024.08</div>
-                <div>담당 업무</div>
-                <p>- HomePage, 콘텐츠 관리 용 CMS 페이지 개발 </p>
-                <p>- SquareSpace 도메인 {"->"} AWS에서 관리하도록 이전</p>
-                <p>- Figma 통해 웹 퍼블리싱 담당</p>
-                <p>- Node.js 통해 백엔드 서버 개발</p>
-                <p>- MySQL 사용하여 쿼리 작성 </p>
-                <p>- EC2에 배포 경험</p>
-              </ProjectDetail>
-              <VideoTag src={Video} autoplay={true} controls={true} />
+              <SubArea>
+                <ProjectDetail>
+                  <div>프로젝트 기간 : 2022.05~2022.10</div>
+                  <div>담당 업무</div>
+                  <p>- 기존 레거시 코드 유지보수 및 추가기능 개발 </p>
+                  <div>Back Office</div>
+                  <p>
+                    - 사용자 메뉴 만족도 집계하여 push 전송 Lamda 스케줄링 개발
+                  </p>
+                  <p>- 수익 로그 상세조회 차트 리포트 페이지 개발</p>
+                  <p>Kiosk</p>
+                  <p>- Electron app 퍼블리싱 </p>
+                  <p>- 운영시간에 맞는 식단표가 나오도록 메뉴보드 화면 개발</p>
+                  <p>App</p>
+                  <p>- 식단표 페이지 신규 리뉴얼 개발 및 유지보수 </p>
+                </ProjectDetail>
+                <ImageArea src={Eliga} alt="NO IMAGE" />
+              </SubArea>
+            </IntroBox>
+          </PageArea>
+        }
+      />
 
-              <div>{/* <img src={AavecCms} alt="noImage" /> */}</div>
-            </SubArea>
-          </IntroBox>
-        </PageArea>
-      </ScrollAnimationContainer>
-      <ScrollAnimationContainer color={"pink"}>
-        <PageArea>
-          <IntroBox>
-            <Category>#Project</Category>
-            <Title>2️⃣. Eliga Order </Title>
+      <ScrollAnimationContainer
+        children={
+          <PageArea>
+            <IntroBox>
+              <Category>#Project</Category>
+              <Title>3️⃣. OmniOne DigitalId </Title>
 
-            <SubArea>
-              <ProjectDetail>
-                <div>프로젝트 기간 : 2022.05~2022.10</div>
-                <div>담당 업무</div>
-                <p>- 기존 레거시 코드 유지보수 및 추가기능 개발 </p>
-                <div>Back Office</div>
-                <p>
-                  - 사용자 메뉴 만족도 집계하여 push 전송 Lamda 스케줄링 개발
-                </p>
-                <p>- 수익 로그 상세조회 차트 리포트 페이지 개발</p>
-                <p>Kiosk</p>
-                <p>- Electron app 퍼블리싱 </p>
-                <p>- 운영시간에 맞는 식단표가 나오도록 메뉴보드 화면 개발</p>
-                <p>App</p>
-                <p>- 식단표 페이지 신규 리뉴얼 개발 및 유지보수 </p>
-              </ProjectDetail>
-              <VideoTag src={Video} autoplay={true} controls={true} />
-
-              <div>{/* <img src={AavecCms} alt="noImage" /> */}</div>
-            </SubArea>
-          </IntroBox>
-        </PageArea>
-      </ScrollAnimationContainer>
-      <ScrollAnimationContainer color={"pink"}>
-        <PageArea>
-          <IntroBox>
-            <Category>#Project</Category>
-            <Title>3️⃣. OmniOne DigitalId </Title>
-
-            <SubArea>
-              <ProjectDetail>
-                <div>프로젝트 기간 : 2023.05~2024.06</div>
-                <div>담당 업무</div>
-                <p>- 관리자 & 클라이언트를 위한 백오피스 초기 개발 </p>
-                <p>- JWT 토큰 접속 유효시간 및 재 연장 기능 개발</p>
-                <p>- React i8n 다국어 구조 변환 작업 </p>
-                <p>- Redux saga/slice 구조 초기 설정 작업 진행 </p>
-                <p>- Styled-Components 사용하여 공용 컴포넌트 개발 및 설계</p>
-              </ProjectDetail>
-              <ImageArea src={DigitalId} alt="NO IMAGE" />
-            </SubArea>
-          </IntroBox>
-        </PageArea>
-      </ScrollAnimationContainer>
+              <SubArea>
+                <ProjectDetail>
+                  <div>프로젝트 기간 : 2023.05~2024.06</div>
+                  <div>담당 업무</div>
+                  <p>- 관리자 & 클라이언트를 위한 백오피스 초기 개발 </p>
+                  <p>- JWT 토큰 접속 유효시간 및 재 연장 기능 개발</p>
+                  <p>- React i8n 다국어 구조 변환 작업 </p>
+                  <p>- Redux saga/slice 구조 초기 설정 작업 진행 </p>
+                  <p>- Styled-Components 사용하여 공용 컴포넌트 개발 및 설계</p>
+                </ProjectDetail>
+                <ImageArea src={DigitalId} alt="NO IMAGE" />
+              </SubArea>
+            </IntroBox>
+          </PageArea>
+        }
+      ></ScrollAnimationContainer>
     </ParentsContainer>
   );
 }
@@ -328,7 +355,6 @@ const VideoTag = styled.video`
 const PageArea = styled.div`
   height: 100%;
   padding: 1.8rem;
-
   display: flex;
   justify-content: center;
 
