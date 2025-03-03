@@ -64,12 +64,10 @@ export const Container = styled.div`
 
   @media ${({ theme }) => theme.device.tablet} {
     flex-direction: column;
-    border: 1px solid blue;
     padding: 1.4rem 0.4rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
-    border: 1px solid red;
     padding: 1.4rem 0.4rem;
   }
 
