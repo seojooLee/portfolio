@@ -60,8 +60,18 @@ export const Container = styled.div`
   align-items: center;
   /* width: 100%; */
   height: 100vh;
+  padding: 1.4rem 2.4rem;
 
-  padding: 1.4rem 13.4rem;
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+    border: 1px solid blue;
+    padding: 1.4rem 0.4rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    border: 1px solid red;
+    padding: 1.4rem 0.4rem;
+  }
 
   /* border: 1px solid ${({ borderColor }) => borderColor}; */
 
