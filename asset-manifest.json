@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.535cb281.css",
-    "main.js": "/portfolio/static/js/main.233f3682.js",
+    "main.js": "/portfolio/static/js/main.111b65ef.js",
     "static/media/video.mp4": "/portfolio/static/media/video.7f7912e43eb6e85c7ea0.mp4",
     "static/media/Pretendard-Regular.ttf": "/portfolio/static/media/Pretendard-Regular.fbe5b096111efa3e3bc2.ttf",
     "static/media/introImage.png": "/portfolio/static/media/introImage.08ee5f2519dbddf3fc26.png",
@@ -10,10 +10,10 @@
     "static/media/eliga.png": "/portfolio/static/media/eliga.a75c72ef10ba773b5240.png",
     "index.html": "/portfolio/index.html",
     "main.535cb281.css.map": "/portfolio/static/css/main.535cb281.css.map",
-    "main.233f3682.js.map": "/portfolio/static/js/main.233f3682.js.map"
+    "main.111b65ef.js.map": "/portfolio/static/js/main.111b65ef.js.map"
   },
   "entrypoints": [
     "static/css/main.535cb281.css",
-    "static/js/main.233f3682.js"
+    "static/js/main.111b65ef.js"
   ]
 }
