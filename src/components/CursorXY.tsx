@@ -15,6 +15,8 @@ export default function CursorXY() {
 
     const xyHandler = (e) => {
       setXY({ x: e.clientX, y: e.clientY });
+      console.log("e.clientX, e.clientY", e.clientX, e.clientY);
+      const pointer = document.getElementById("pointer");
     };
 
     window.addEventListener("click", clickHandler);
