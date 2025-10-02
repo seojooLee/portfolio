@@ -6,6 +6,7 @@
     "sourceMap": false,
     "strictNullChecks": false,
     "jsx": "react-jsx",
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   }
 }

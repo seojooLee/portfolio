@@ -5,18 +5,18 @@ import About from "./components/new/About";
 import Projects from "./components/new/Projects";
 import { BrowserRouter } from "react-router-dom";
 import Skills from "./components/new/Skils";
-
+import "../src/styles/index.css";
 function NewApp() {
   return (
     <BrowserRouter>
       <ReactFullpage
         credits={{ enabled: false }}
-        licenseKey={"YOUR_KEY_HERE"} // 무료 버전이면 "" 가능
+        licenseKey={""}
         scrollingSpeed={1000}
         render={({ fullpageApi }: any) => {
           return (
             <ReactFullpage.Wrapper>
-              <div className="section">
+              <div className="section w-screen h-screen">
                 <Hero />
               </div>
               <div className="section">
