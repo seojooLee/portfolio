@@ -6,11 +6,12 @@ import Projects from "./components/new/Projects";
 import { BrowserRouter } from "react-router-dom";
 import Skills from "./components/new/Skils";
 import "../src/styles/index.css";
+import Contact from "./components/new/Contact";
 function NewApp() {
   return (
     <BrowserRouter>
       <ReactFullpage
-        credits={{ enabled: false }}
+        credits={{ enabled: false, label: "" }}
         licenseKey={""}
         scrollingSpeed={1000}
         render={({ fullpageApi }: any) => {
@@ -27,6 +28,9 @@ function NewApp() {
               </div>
               <div className="section">
                 <Skills />
+              </div>
+              <div className="section">
+                <Contact />
               </div>
             </ReactFullpage.Wrapper>
           );
