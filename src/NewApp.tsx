@@ -6,7 +6,8 @@ import Projects from "./components/new/Projects";
 import { BrowserRouter } from "react-router-dom";
 import Skills from "./components/new/Skils";
 import "../src/styles/index.css";
-import Contact from "./components/new/Contact";
+import Contact from "./components/new/Experience";
+import Finish from "./components/new/Finish";
 function NewApp() {
   return (
     <BrowserRouter>
@@ -31,6 +32,9 @@ function NewApp() {
               </div>
               <div className="section">
                 <Contact />
+              </div>
+              <div className="section">
+                <Finish />
               </div>
             </ReactFullpage.Wrapper>
           );

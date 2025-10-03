@@ -10,7 +10,7 @@ const Projects = () => {
           name: "OmniOne DigitalId 백오피스 (2023.05 ~ )",
           details: [
             "관리자 및 고객용 백오피스 전체 기능 개발 (로그인, 권한 제어 포함)",
-            "react-hook-form + custom hook으로 유효성 검증 구조화 → **폼 오류율 25% 감소**",
+            "react-hook-form + custom hook으로 유효성 검증 구조화 → 폼 오류율 25% 감소",
             "서버/로컬 상태 분리로 유지보수 효율성 향상 및 신규 기능 대응 속도 15% 향상",
           ],
         },
@@ -61,7 +61,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="min-h-screen py-16 bg-gray-100 text-gray-900 flex flex-col items-center">
+    <section className="min-h-screen py-16 bg-neutral-900 text-gray-200 flex flex-col items-center">
       <motion.h2
         className="text-5xl font-extrabold mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -72,11 +72,11 @@ const Projects = () => {
         Projects & Experience
       </motion.h2>
 
-      <div className="flex flex-col w-full max-w-6xl gap-12 px-6">
+      <div className=" flex flex-col w-full max-w-6xl gap-12 px-6">
         {experiences.map((exp, idx) => (
           <motion.div
             key={idx}
-            className="bg-white rounded-3xl shadow-lg p-8"
+            className="bg-neutral-100 rounded-3xl shadow-lg p-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -84,8 +84,10 @@ const Projects = () => {
           >
             {/* 회사 헤더 */}
             <div className="mb-8 border-b border-gray-300 pb-4">
-              <h3 className="text-2xl font-bold">{exp.company}</h3>
-              <p className="italic text-gray-500">{exp.role}</p>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {exp.company}
+              </h3>
+              <p className="italic text-gray-800">{exp.role}</p>
             </div>
 
             {/* 프로젝트 카드 */}
@@ -97,12 +99,14 @@ const Projects = () => {
                 >
                   {/* 왼쪽: 프로젝트 이름 */}
                   <div className="col-span-1 flex items-center">
-                    <h4 className="text-lg font-semibold">{proj.name}</h4>
+                    <h4 className="text-lg font-semibold text-gray-800 whitespace-wrap">
+                      {proj.name}
+                    </h4>
                   </div>
 
                   {/* 오른쪽: 상세 내용 */}
                   <div className="col-span-2">
-                    <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm text-left  ">
                       {proj.details.map((detail, didx) => (
                         <li key={didx}>{detail}</li>
                       ))}

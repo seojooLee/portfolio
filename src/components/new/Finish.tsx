@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
+import { Linkedin } from "lucide-react";
 const keywords = [
   "React",
   "TypeScript",
@@ -12,7 +12,7 @@ const keywords = [
   "Styled-Components",
 ];
 
-const Hero = () => {
+const Finish = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -82,13 +82,38 @@ const Hero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="text-6xl md:text-7xl font-extrabold text-white text-center z-20 drop-shadow-lg"
       >
-        안녕하세요, <br />
-        {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400 ">
-          프론트엔드 개발자
-        </span>{" "} */}
-        <br />
-        이서주 입니다.
+        감사합니다.
       </motion.h4>
+
+      {/* 연락처 영역 */}
+      <div className="mt-8 text-center z-20 space-y-3">
+        <p className="text-lg text-gray-300">함께할 기회를 기다립니다.</p>{" "}
+        <br />
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-4">
+          <a
+            href="mailto:teren621@gmail.com"
+            className="px-6 py-2 rounded-full border border-white text-white hover:bg-white hover:text-neutral-900 transition"
+          >
+            ✉️ teren621@gmail.com
+          </a>
+          <a
+            href="https://potential-coding.tistory.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 rounded-full border border-white text-white hover:bg-white hover:text-neutral-900 transition"
+          >
+            📝 Blog
+          </a>
+          <a
+            href="https://www.linkedin.com/in/seojoo-lee-2b685818a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 rounded-full border flex items-center gap-2 border-white text-white hover:bg-white hover:text-neutral-900 transition"
+          >
+            <Linkedin size={22} color="skyblue" /> <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
 
       {/* 기술 키워드 비 */}
       {dimensions.width > 0 &&
@@ -129,13 +154,8 @@ const Hero = () => {
             </motion.span>
           );
         })}
-
-      {/* 스크롤 안내 */}
-      <motion.div className="absolute bottom-10 text-white text-2xl animate-bounce z-20">
-        ↓ Scroll Down
-      </motion.div>
     </section>
   );
 };
 
-export default Hero;
+export default Finish;

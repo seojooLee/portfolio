@@ -4,7 +4,7 @@ import Hero from "../../components/new/Hero";
 import Projects from "../../components/new/Projects";
 import Skills from "../../components/new/Skils";
 import About from "../../components/new/About";
-import Contact from "../../components/new/Contact";
+import Contact from "../../components/new/Experience";
 const Home = () => {
   return (
     <Layout>

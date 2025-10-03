@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import Button from "../components/Button";
+import React = require("react");
 const IntroPages = () => {
   return (
     <ScreenWrapper>
