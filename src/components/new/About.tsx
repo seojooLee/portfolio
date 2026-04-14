@@ -7,7 +7,7 @@ const About = () => {
         <div className="space-y-10">
           {/* 간단 소개 */}
           <p className="text-lg leading-relaxed text-gray-200 text-left">
-            5년 차 프론트엔드 개발자 이서주입니다. <br /> React/TypeScript 기반
+            6년 차 프론트엔드 개발자 이서주입니다. <br /> React/TypeScript 기반
             프로젝트를 통해 UI/UX 개선과 상태 관리 최적화에 집중해왔습니다.{" "}
             <br />
             협업과 문제 해결에 강점을 두고, 안정적이며 유지보수성 높은 코드를

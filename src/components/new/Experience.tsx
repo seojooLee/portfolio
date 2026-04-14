@@ -1,8 +1,27 @@
 import { motion } from "framer-motion";
 import { Briefcase, BookOpen, ConciergeBell, Presentation } from "lucide-react";
 import { Link } from "react-router-dom";
+import ConsoleCraft from "../../assets/image/consoleCraft.png";
+import AavecCms from "../../assets/image/aavecCms.png";
 
 const experiences = [
+  {
+    type: "project",
+    title: "Console Craft 개발",
+    period: "2025.12",
+    description: [
+      "픽셀 에디터로 콘솔에 그림 출력할 수 있는 프로젝트 개발",
+      <img src={ConsoleCraft} alt="Console Craft" style={{ width: "20rem" }} />,
+      <a
+        href="https://seojoolee.github.io/consolecraft/"
+        className="text-blue-700 cursor-default"
+      >
+        Console Craft
+      </a>,
+    ],
+    icon: <Briefcase className="w-6 h-6 text-white" />,
+    color: "bg-blue-500",
+  },
   {
     type: "project",
     title: "Studio AAvec (외주)",
@@ -12,6 +31,7 @@ const experiences = [
       "SquareSpace → AWS 도메인 관리 이전",
       "Figma 기반 웹 퍼블리싱, MySQL DB 설계 및 Node.js 백엔드 개발",
       "AWS EC2 배포 경험",
+      <img src={AavecCms} alt="Aavec CMS" style={{ width: "20rem" }} />,
     ],
     icon: <Briefcase className="w-6 h-6 text-white" />,
     color: "bg-blue-500",

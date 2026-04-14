@@ -7,7 +7,7 @@ const Projects = () => {
       role: "Frontend Developer @ Platform Dev Team (2022.11 ~ 현재, 정규직 선임)",
       projects: [
         {
-          name: "OmniOne DigitalId 백오피스 (2023.05 ~ )",
+          name: "OmniOne DigitalId 백오피스 \n (2023.05 ~ )",
           details: [
             "관리자 및 고객용 백오피스 전체 기능 개발 (로그인, 권한 제어 포함)",
             "react-hook-form + custom hook으로 유효성 검증 구조화 → 폼 오류율 25% 감소",
@@ -15,7 +15,7 @@ const Projects = () => {
           ],
         },
         {
-          name: "블록체인 해커톤 콘솔 페이지 (2025.02 ~ 2025.05)",
+          name: "블록체인 해커톤 콘솔 페이지 \n (2025.02 ~ 2025.05)",
           details: [
             "참가자용 콘솔 UI 개발",
             "상태 처리 공통화로 코드 중복 40% 감소, 오류율 30% 감소",
@@ -23,7 +23,7 @@ const Projects = () => {
           ],
         },
         {
-          name: "인도네시아 POC 데모 페이지 (2024.11)",
+          name: "인도네시아 POC 데모 페이지 \n(2024.11)",
           details: [
             "TypeScript + RTK Query 기반 컴포넌트 설계",
             "다국어 지원(i18next), 캐시 최적화",
@@ -48,7 +48,7 @@ const Projects = () => {
       role: "Frontend Developer @ Core Media Dev Team (2019.12 ~ 2022.10, 정규직 사원)",
       projects: [
         {
-          name: "Elliga 사내식당 주문 시스템 (크래프톤/카카오 납품)",
+          name: "Elliga 사내식당 주문 시스템 \n (크래프톤/카카오 납품)",
           details: [
             "식단표 기반 키오스크 및 백오피스 개발",
             "HTML Canvas 기반 실시간 썸네일 구현",
@@ -84,7 +84,7 @@ const Projects = () => {
           >
             {/* 회사 헤더 */}
             <div className="mb-8 border-b border-gray-300 pb-4">
-              <h3 className="text-2xl font-bold text-gray-900">
+              <h3 className="text-2xl font-bold text-gray-900 text-nowrap">
                 {exp.company}
               </h3>
               <p className="italic text-gray-800">{exp.role}</p>
@@ -98,8 +98,8 @@ const Projects = () => {
                   className="grid grid-cols-3 gap-6 p-4 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
                 >
                   {/* 왼쪽: 프로젝트 이름 */}
-                  <div className="col-span-1 flex items-center">
-                    <h4 className="text-lg font-semibold text-gray-800 whitespace-wrap">
+                  <div className="col-span-1 flex items-center text-center">
+                    <h4 className="text-lg font-semibold text-gray-800 ">
                       {proj.name}
                     </h4>
                   </div>
