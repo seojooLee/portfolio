@@ -60,7 +60,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="min-h-screen py-16 bg-neutral-900 text-gray-200 flex flex-col items-center">
+    <section className="min-h-screen py-16 bg-neutral-50 text-neutral-900 flex flex-col items-center">
       <motion.h2
         className="text-5xl font-extrabold mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -75,7 +75,7 @@ const Projects = () => {
         {experiences.map((exp, idx) => (
           <motion.div
             key={idx}
-            className="bg-neutral-100 rounded-3xl shadow-lg p-8"
+            className="bg-white border border-neutral-200 rounded-3xl shadow-sm p-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ const Projects = () => {
               {exp.projects.map((proj, pidx) => (
                 <div
                   key={pidx}
-                  className="grid grid-cols-3 gap-6 p-4 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                  className="grid grid-cols-3 gap-6 p-4 bg-neutral-50 border border-neutral-200 rounded-2xl hover:shadow-md transition-shadow"
                 >
                   {/* 왼쪽: 프로젝트 이름 */}
                   <div className="col-span-1 flex items-center text-center">

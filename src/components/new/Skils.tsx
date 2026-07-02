@@ -31,7 +31,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="min-h-screen py-16 bg-neutral-900 text-gray-200 flex flex-col justify-center items-center">
+    <section className="min-h-screen py-16 bg-neutral-50 text-neutral-900 flex flex-col justify-center items-center">
       <motion.h2
         className="text-5xl font-extrabold mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -46,16 +46,16 @@ const Skills = () => {
         {skillSections.map((section, idx) => (
           <motion.div
             key={idx}
-            className="bg-gray-100 rounded-3xl shadow-lg p-6 hover:shadow-2xl transition-shadow"
+            className="bg-white border border-neutral-200 rounded-3xl shadow-sm p-6 hover:shadow-md transition-shadow"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: idx * 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+            <h3 className="text-2xl font-bold mb-4 text-neutral-800">
               {section.title}
             </h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm">
+            <ul className="list-disc list-inside space-y-2 text-neutral-600 text-sm">
               {section.skills.map((skill, sidx) => (
                 <li key={sidx}>{skill}</li>
               ))}
@@ -67,13 +67,4 @@ const Skills = () => {
   );
 };
 
-const PortfolioSkillsSection = () => {
-  return (
-    <section id="skills" className="bg-neutral-900">
-      {/* 기존 Skills 섹션 */}
-      <Skills />
-    </section>
-  );
-};
-
-export default PortfolioSkillsSection;
+export default Skills;

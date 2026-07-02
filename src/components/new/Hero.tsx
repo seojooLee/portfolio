@@ -1,139 +1,65 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 
-const keywords = [
-  "React",
-  "TypeScript",
-  "Frontend",
-  "UI/UX",
-  "RTK",
-  "Tailwind",
-  "Redux",
-  "Styled-Components",
+const stats = [
+  { value: "6년+", label: "실무 경력" },
+  { value: "10+", label: "표준화한 폼 종류" },
+  { value: "선임", label: "현 직급" },
 ];
 
+const skillChips = ["React", "TypeScript", "RTK Query", "Node.js", "AWS"];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
+
 const Hero = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setDimensions({
-        width: containerRef.current.offsetWidth,
-        height: containerRef.current.offsetHeight,
-      });
-    }
-    const handleResize = () => {
-      if (containerRef.current) {
-        setDimensions({
-          width: containerRef.current.offsetWidth,
-          height: containerRef.current.offsetHeight,
-        });
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  //입자 생성
-  const createParticles = (count: number) =>
-    Array.from({ length: count }).map((_, i) => {
-      const size = Math.random() * 6 + 4; // 4~10px
-      const x = Math.random() * dimensions.width;
-      const delay = Math.random() * 5;
-      const duration = Math.random() * 10 + 5;
-      return { size, x, delay, duration };
-    });
-
-  const particles = createParticles(30);
-
   return (
-    <section
-      ref={containerRef}
-      className="relative flex flex-col items-center justify-center h-screen w-screen bg-neutral-900 overflow-hidden"
-    >
-      {/* 배경화면 - 입자 추가 */}
-      {dimensions.width > 0 &&
-        particles.map((p, i) => (
+    <section className="min-h-screen bg-neutral-50 py-24 px-6 flex items-center">
+      <div className="max-w-5xl mx-auto w-full grid grid-cols-4 gap-4 auto-rows-[minmax(120px,auto)]">
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.7 }}
+          className="col-span-4 md:col-span-3 row-span-2 bg-white border border-neutral-200 rounded-3xl p-10 flex flex-col justify-center shadow-sm"
+        >
+          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 leading-tight">
+            안녕하세요,
+            <br />
+            이서주입니다.
+          </h1>
+          <p className="mt-4 text-neutral-500">
+            6년차 프론트엔드 개발자 · React / TypeScript 기반 서비스 개발
+          </p>
+        </motion.div>
+
+        {stats.map((s, i) => (
           <motion.div
-            key={i}
-            className="absolute rounded-full bg-white opacity-50"
-            style={{
-              width: p.size,
-              height: p.size,
-              left: p.x,
-              top: -p.size,
-            }}
-            animate={{ y: dimensions.height + 50 }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: p.duration,
-              delay: p.delay,
-              ease: "linear",
-            }}
-          />
+            key={s.label}
+            {...fadeUp}
+            transition={{ duration: 0.7, delay: 0.1 + i * 0.1 }}
+            className="col-span-4 sm:col-span-2 md:col-span-1 bg-neutral-900 text-white rounded-3xl p-6 flex flex-col justify-center"
+          >
+            <p className="text-3xl font-bold">{s.value}</p>
+            <p className="text-sm text-neutral-400 mt-1">{s.label}</p>
+          </motion.div>
         ))}
 
-      {/* 메인 타이틀 */}
-      <motion.h4
-        initial={{ opacity: 0, y: 50, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 0.7 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="text-6xl md:text-7xl font-extrabold text-white text-center z-20 drop-shadow-lg"
-      >
-        안녕하세요, <br />
-        {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400 ">
-          프론트엔드 개발자
-        </span>{" "} */}
-        <br />
-        이서주 입니다.
-      </motion.h4>
-
-      {/* 기술 키워드 비 */}
-      {dimensions.width > 0 &&
-        keywords.map((word, i) => {
-          const x = Math.random() * (dimensions.width - 50);
-          const delay = Math.random() * 5;
-          const duration = Math.random() * 8 + 4;
-          const fontSize = Math.random() * 20 + 14;
-          const colors = [
-            "#ffffff40",
-            "#fde68a59",
-            "#4e4d4d27",
-            "#60a5fa6b",
-            "#34d39949",
-          ];
-          const color = colors[Math.floor(Math.random() * colors.length)];
-
-          return (
-            <motion.span
-              key={i}
-              className="absolute font-semibold"
-              style={{
-                left: x,
-                top: -50,
-                fontSize: `${fontSize}px`,
-                color: color,
-              }}
-              animate={{ y: dimensions.height + 50 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                duration,
-                delay,
-                ease: "linear",
-              }}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="col-span-4 bg-white border border-neutral-200 rounded-3xl p-6 flex flex-wrap items-center gap-2 shadow-sm"
+        >
+          {skillChips.map((chip) => (
+            <span
+              key={chip}
+              className="bg-neutral-100 border border-neutral-200 rounded-full px-4 py-1.5 text-sm text-neutral-700"
             >
-              {word}
-            </motion.span>
-          );
-        })}
-
-      {/* 스크롤 안내 */}
-      <motion.div className="absolute bottom-10 text-white text-2xl animate-bounce z-20">
-        ↓ Scroll Down
-      </motion.div>
+              {chip}
+            </span>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
-import { Briefcase, BookOpen, ConciergeBell, Presentation } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+  Briefcase,
+  BookOpen,
+  ConciergeBell,
+  TrendingUp,
+  Tag,
+  MessageCircle,
+} from "lucide-react";
 import ConsoleCraft from "../../assets/image/consoleCraft.png";
 import AavecCms from "../../assets/image/aavecCms.png";
 
@@ -25,7 +31,7 @@ const experiences = [
   {
     type: "project",
     title: "Studio AAvec (외주)",
-    period: "2024.07 ~ 2024.08",
+    period: "2024.05 ~ 2024.08",
     description: [
       "바디 프로필 웹사이트 외주 개발 (홈페이지 및 백오피스)",
       "SquareSpace → AWS 도메인 관리 이전",
@@ -38,18 +44,34 @@ const experiences = [
   },
   {
     type: "project",
-    title: "졸업전시회 프로젝트",
-    period: "2024.07 ~ 2024.08",
+    title: "시그널 그래프",
+    period: "2026.06",
     description: [
-      "졸업전시회 2D/3D Unity 게임 구축",
+      "SNS·뉴스 데이터를 기반으로 국내 수혜주를 탐색해 그래프로 시각화하는 웹 서비스 개발",
       <a
-        href="https://potential-coding.tistory.com/24"
+        href="https://alpha-graph.vercel.app/"
         className="text-blue-700 cursor-default"
       >
-        졸업전시회 글보기
+        시그널 그래프
       </a>,
     ],
-    icon: <Presentation className="w-6 h-6 text-white" />,
+    icon: <TrendingUp className="w-6 h-6 text-white" />,
+    color: "bg-blue-500",
+  },
+  {
+    type: "project",
+    title: "네임택 제너레이터",
+    period: "2024.06",
+    description: [
+      "기업의 잦은 인사이동을 고려해, 수기로 제작하던 네임택을 자동 생성하는 서비스 개발",
+      <a
+        href="https://namecard-batch.vercel.app/"
+        className="text-blue-700 cursor-default"
+      >
+        네임택 제너레이터
+      </a>,
+    ],
+    icon: <Tag className="w-6 h-6 text-white" />,
     color: "bg-blue-500",
   },
   {
@@ -57,7 +79,7 @@ const experiences = [
     title: "TypeScript 스터디",
     period: "2025.05 ~ 2025.08",
     description: [
-      "『이펙티브 타입스크립트』 스터디 진행",
+      "『이펙티브 타입스크립트』 스터디원 5명 이상과 함께 스터디 진행",
       "각 회사의 개발자들과 매주 회고 및 노션 정리",
       "실무 적용 사례 공유",
     ],
@@ -80,16 +102,26 @@ const experiences = [
     icon: <ConciergeBell className="w-6 h-6 text-white" />,
     color: "bg-yellow-500",
   },
+  {
+    type: "study",
+    title: "사내 직무 인터뷰 참여",
+    period: "",
+    description: [
+      "라온시큐어 / 에스큐아이소프트 재직 중 프론트엔드 개발자로서의 업무 성과와 협업 방식을 공유하는 사내 공식 블로그 직무 인터뷰어로 참여",
+    ],
+    icon: <MessageCircle className="w-6 h-6 text-white" />,
+    color: "bg-green-500",
+  },
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-neutral-900">
+    <section className="py-20 bg-neutral-50">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">
+        <h2 className="text-3xl font-bold text-center mb-12 text-neutral-900">
           Experience
         </h2>
-        <div className="relative border-l-2 border-gray-300 ">
+        <div className="relative border-l-2 border-neutral-300 ">
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
@@ -107,7 +139,7 @@ const Experience = () => {
               </span>
 
               {/* 본문 */}
-              <div className="bg-slate-100 p-6 rounded-xl shadow hover:shadow-md transition  ">
+              <div className="bg-white border border-neutral-200 p-6 rounded-xl shadow-sm hover:shadow-md transition  ">
                 <h3 className="text-xl font-semibold text-gray-900">
                   {exp.title}
                 </h3>
