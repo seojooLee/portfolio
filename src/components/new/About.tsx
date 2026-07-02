@@ -39,9 +39,9 @@ const About = () => {
                 Problem Solving
               </h3>
               <ul className="space-y-1 text-gray-300">
-                <li>폼 오류율 25% 감소</li>
-                <li>성능 최적화 → 응답속도 30% 개선</li>
-                <li>코드 중복 40% 감소</li>
+                <li>반복되는 폼 로직을 공통 컴포넌트로 표준화</li>
+                <li>저사양 환경 렌더링 지연(3~5초) → 즉시 반응 수준 개선</li>
+                <li>중복 API 호출 제거를 위한 캐싱·자동 갱신 구조 설계</li>
               </ul>
             </div>
           </div>

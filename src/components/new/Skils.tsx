@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 
 const Skills = () => {
   const skillSections = [
@@ -17,7 +15,7 @@ const Skills = () => {
     {
       title: "Collaboration & Process",
       skills: [
-        "GitLab 기반 CI/CD 경험, Jenkins 파이프라인 구축 경험",
+        "Jenkins 기반 CI/CD 파이프라인 구축 경험",
         "Jira/Confluence, Slack 기반 협업으로 소통 및 이슈 관리·문서화 수행",
         "Agile/Scrum 참여 (매주 Scrum 회의)",
         "코드 리뷰 및 공용 컴포넌트 구조화로 팀 효율성 개선",
@@ -62,51 +60,6 @@ const Skills = () => {
                 <li key={sidx}>{skill}</li>
               ))}
             </ul>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-const SkillChips = () => {
-  const skills = [
-    { name: "React", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Redux/RTK Query", level: 85 },
-    { name: "Styled-components / SCSS", level: 80 },
-    { name: "react-hook-form / Custom Hook", level: 85 },
-    { name: "RESTful API / Swagger", level: 80 },
-    { name: "Node.js", level: 60 },
-  ];
-
-  return (
-    <section className="py-16 bg-gray-100 flex flex-col items-center">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-8  ">
-        {skills.map((skill, idx) => (
-          <motion.div
-            key={idx}
-            className="flex flex-col items-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: idx * 0.1 }}
-          >
-            <div className="w-24 h-24">
-              <CircularProgressbar
-                value={skill.level}
-                text={`${skill.level}%`}
-                styles={buildStyles({
-                  textSize: "16px",
-                  pathColor: "#4f46e5", // 모던 블루 계열
-                  textColor: "#111827",
-                  trailColor: "#d1d5db",
-                })}
-              />
-            </div>
-            <span className="mt-3 text-sm font-semibold text-gray-700 text-center">
-              {skill.name}
-            </span>
           </motion.div>
         ))}
       </div>
