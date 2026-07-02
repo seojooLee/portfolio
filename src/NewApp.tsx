@@ -3,7 +3,7 @@ import About from "./components/new/About";
 import Projects from "./components/new/Projects";
 import CaseStudies from "./components/new/CaseStudies";
 import { BrowserRouter } from "react-router-dom";
-import Skills from "./components/new/Skils";
+import Skills from "./components/new/Skills";
 import Nav from "./components/new/Nav";
 import "../src/styles/index.css";
 import Contact from "./components/new/Experience";
