@@ -65,7 +65,7 @@ const experiences = [
     description: [
       "기업의 잦은 인사이동을 고려해, 수기로 제작하던 네임택을 자동 생성하는 서비스 개발",
       <a
-        href="https://namecard-batch.vercel.app/"
+        href="https://name-batch-public.vercel.app/"
         className="text-blue-700 cursor-default"
       >
         네임택 제너레이터
